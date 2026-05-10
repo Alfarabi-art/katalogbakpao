@@ -6,9 +6,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# =========================
-# CSS
-# =========================
+# ================= CSS =================
 st.markdown("""
 <style>
 
@@ -19,45 +17,32 @@ st.markdown("""
     background-attachment: fixed;
 }
 
-.main::before{
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.45);
-    z-index:-1;
+.block-container{
+    padding-top: 2rem;
 }
 
-.title{
+.judul{
     text-align:center;
     color:white;
     font-size:60px;
     font-weight:800;
-    margin-top:20px;
+    margin-bottom:10px;
 }
 
-.subtitle{
+.subjudul{
     text-align:center;
     color:white;
     font-size:22px;
     margin-bottom:50px;
 }
 
-/* CARD */
 .card{
     background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(16px);
-
-    border:1px solid rgba(255,255,255,0.2);
-
-    border-radius:28px;
-
+    backdrop-filter: blur(14px);
+    border-radius:25px;
     overflow:hidden;
-
-    margin-bottom:35px;
-
+    margin-bottom:30px;
+    border:1px solid rgba(255,255,255,0.2);
     box-shadow:0 8px 32px rgba(0,0,0,0.35);
 }
 
@@ -73,7 +58,7 @@ st.markdown("""
 
 .nama{
     color:white;
-    font-size:34px;
+    font-size:32px;
     font-weight:700;
     margin-bottom:10px;
 }
@@ -89,46 +74,30 @@ st.markdown("""
     color:#F5F5F5;
     font-size:18px;
     line-height:1.7;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 .badge{
     display:inline-block;
+    background:rgba(255,255,255,0.15);
+    color:white;
     padding:10px 16px;
     border-radius:14px;
-
-    background: rgba(255,255,255,0.15);
-
-    color:white;
-
     font-weight:600;
-}
-
-/* CONTACT */
-.contact-title{
-    color:white;
-    font-size:46px;
-    font-weight:800;
-    margin-top:40px;
-    margin-bottom:20px;
 }
 
 .contact-box{
     background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(16px);
-
-    border:1px solid rgba(255,255,255,0.2);
-
+    backdrop-filter: blur(14px);
     border-radius:30px;
-
     padding:40px;
-
     text-align:center;
-
+    margin-top:50px;
     margin-bottom:40px;
+    border:1px solid rgba(255,255,255,0.2);
 }
 
-.contact-name{
+.contact-title{
     color:white;
     font-size:48px;
     font-weight:800;
@@ -138,57 +107,44 @@ st.markdown("""
 .contact-info{
     color:white;
     font-size:24px;
-    margin-bottom:14px;
+    margin-bottom:15px;
 }
 
 .contact-desc{
     color:#F5F5F5;
-    font-size:20px;
+    font-size:18px;
     margin-top:20px;
-    line-height:1.7;
+    line-height:1.8;
 }
 
 .wa-btn{
     display:inline-block;
-
-    margin-top:35px;
-
+    margin-top:30px;
     background:#25D366;
-
     color:white !important;
-
-    padding:18px 28px;
-
-    border-radius:16px;
-
-    font-size:22px;
-
-    font-weight:700;
-
+    padding:16px 28px;
+    border-radius:14px;
     text-decoration:none;
+    font-size:22px;
+    font-weight:700;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# =========================
-# HEADER
-# =========================
+# ================= HEADER =================
 st.markdown("""
-<div class="title">
+<div class="judul">
 🥟 Bakpao Ceu Mumun
 </div>
 
-<div class="subtitle">
+<div class="subjudul">
 Bakpao Premium • Lembut • Fresh Setiap Hari
 </div>
 """, unsafe_allow_html=True)
 
-# =========================
-# DATA
-# =========================
+# ================= DATA =================
 produk = [
-
     {
         "nama":"Bakpao Coklat",
         "harga":"Rp 5.000",
@@ -216,12 +172,9 @@ produk = [
         "deskripsi":"Isian kacang hijau manis tradisional.",
         "gambar":"https://images.unsplash.com/photo-1482049016688-2d3e1b311543"
     }
-
 ]
 
-# =========================
-# PRODUK
-# =========================
+# ================= PRODUK =================
 col1, col2 = st.columns(2)
 
 for i, item in enumerate(produk):
@@ -257,25 +210,16 @@ for i, item in enumerate(produk):
     if i % 2 == 0:
         with col1:
             st.markdown(html, unsafe_allow_html=True)
-
     else:
         with col2:
             st.markdown(html, unsafe_allow_html=True)
 
-# =========================
-# CONTACT
-# =========================
+# ================= CONTACT =================
 st.markdown("""
-<div class="contact-title">
-📞 Contact Person
-</div>
-""", unsafe_allow_html=True)
-
-contact_html = """
 <div class="contact-box">
 
-    <div class="contact-name">
-        🥟 Bakpao Ceu Mumun
+    <div class="contact-title">
+        📞 Contact Person
     </div>
 
     <div class="contact-info">
@@ -300,6 +244,4 @@ contact_html = """
     </a>
 
 </div>
-"""
-
-st.markdown(contact_html, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
