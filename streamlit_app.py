@@ -103,6 +103,14 @@ html, body, [class*="css"] {
     padding-top: 10px;
 }
 
+.block-container {
+    padding-top: 1rem;
+}
+
+header[data-testid="stHeader"] {
+    background: transparent;
+}
+
 .title {
     text-align: center;
     font-size: 60px;
