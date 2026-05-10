@@ -256,43 +256,42 @@ Bakpao homemade lembut, halal, dan cocok untuk reseller maupun acara keluarga
 # =========================
 # PRODUK
 # =========================
-col1, col2 = st.columns(2, gap="large")
+if i % 2 == 0:
+    col = col1
+else:
+    col = col2
 
-for i, item in enumerate(produk):
+with col:
 
-    col = col1 if i % 2 == 0 else col2
+    st.markdown('<div class="card">', unsafe_allow_html=True)
 
-    with col:
+    st.image(
+        item["gambar"],
+        use_container_width=True
+    )
 
-        st.markdown('<div class="card">', unsafe_allow_html=True)
+    st.markdown(f"""
+    <div class="card-body">
 
-        st.image(
-            item["gambar"],
-            use_container_width=True
-        )
-
-        st.markdown(f"""
-        <div class="card-body">
-
-            <div class="nama-produk">
-                {item['nama']}
-            </div>
-
-            <div class="harga">
-                {item['harga']}
-            </div>
-
-            <div class="deskripsi">
-                {item['deskripsi']}
-            </div>
-
-            <div class="badge">
-                ⭐ Best Seller
-            </div>
-
+        <div class="nama-produk">
+            {item['nama']}
         </div>
+
+        <div class="harga">
+            {item['harga']}
         </div>
-        """, unsafe_allow_html=True)
+
+        <div class="deskripsi">
+            {item['deskripsi']}
+        </div>
+
+        <div class="badge">
+            ⭐ Best Seller
+        </div>
+
+    </div>
+    </div>
+    """, unsafe_allow_html=True)
 
 # =========================
 # CONTACT PERSON
