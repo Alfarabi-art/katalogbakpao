@@ -135,12 +135,6 @@ html, body, [class*="css"] {
     transform: translateY(-5px);
 }
 
-.card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
 .card-body {
     padding: 24px;
 }
@@ -260,22 +254,48 @@ col1, col2 = st.columns(2, gap="large")
 
 for i, item in enumerate(produk):
 
-    html = f"""
-    <div class="card">
-        <img src="{item['gambar']}">
-        <div class="card-body">
-            <div class="nama-produk">{item['nama']}</div>
-            <div class="harga">{item['harga']}</div>
-            <div class="deskripsi">{item['deskripsi']}</div>
-            <div class="badge">⭐ Best Seller</div>
-        </div>
-    </div>
-    """
+    target_col = col1 if i % 2 == 0 else col2
 
-    if i % 2 == 0:
-        col1.markdown(html, unsafe_allow_html=True)
-    else:
-        col2.markdown(html, unsafe_allow_html=True)
+    with target_col:
+
+        st.markdown(
+            '<div class="card">',
+            unsafe_allow_html=True
+        )
+
+        # GAMBAR LOCAL
+        st.image(
+            item["gambar"],
+            use_container_width=True
+        )
+
+        # ISI CARD
+        st.markdown(f"""
+        <div class="card-body">
+
+            <div class="nama-produk">
+                {item['nama']}
+            </div>
+
+            <div class="harga">
+                {item['harga']}
+            </div>
+
+            <div class="deskripsi">
+                {item['deskripsi']}
+            </div>
+
+            <div class="badge">
+                ⭐ Best Seller
+            </div>
+
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown(
+            '</div>',
+            unsafe_allow_html=True
+        )
 
 # =========================
 # CONTACT PERSON
