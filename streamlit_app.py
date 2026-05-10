@@ -254,48 +254,35 @@ col1, col2 = st.columns(2, gap="large")
 
 for i, item in enumerate(produk):
 
-    target_col = col1 if i % 2 == 0 else col2
+    with (col1 if i % 2 == 0 else col2):
 
-    with target_col:
-
-        st.markdown(
-            '<div class="card">',
-            unsafe_allow_html=True
-        )
-
-        # GAMBAR LOCAL
-        st.image(
-            item["gambar"],
-            use_container_width=True
-        )
-
-        # ISI CARD
         st.markdown(f"""
-        <div class="card-body">
+        <div class="card">
 
-            <div class="nama-produk">
-                {item['nama']}
-            </div>
+            <img src="{item['gambar']}" class="gambar-produk">
 
-            <div class="harga">
-                {item['harga']}
-            </div>
+            <div class="card-body">
 
-            <div class="deskripsi">
-                {item['deskripsi']}
-            </div>
+                <div class="nama-produk">
+                    {item['nama']}
+                </div>
 
-            <div class="badge">
-                ⭐ Best Seller
+                <div class="harga">
+                    {item['harga']}
+                </div>
+
+                <div class="deskripsi">
+                    {item['deskripsi']}
+                </div>
+
+                <div class="badge">
+                    ⭐ Best Seller
+                </div>
+
             </div>
 
         </div>
         """, unsafe_allow_html=True)
-
-        st.markdown(
-            '</div>',
-            unsafe_allow_html=True
-        )
 
 # =========================
 # CONTACT PERSON
