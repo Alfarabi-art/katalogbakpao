@@ -19,12 +19,14 @@ produk = [
         "deskripsi": "Bakpao lembut dengan isian coklat premium yang lumer di mulut.",
         "gambar": "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop"
     },
+
     {
         "nama": "Bakpao Ayam",
         "harga": "Rp 7.000",
         "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
         "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
     },
+
     {
         "nama": "Bakpao Strawberry",
         "harga": "Rp 6.000",
@@ -216,8 +218,9 @@ col1, col2 = st.columns(2)
 
 for i, item in enumerate(produk):
 
-    html = f"""
+    html_card = f"""
     <div class="card">
+
         <img src="{item['gambar']}">
 
         <div class="card-body">
@@ -239,15 +242,17 @@ for i, item in enumerate(produk):
             </div>
 
         </div>
+
     </div>
     """
 
     if i % 2 == 0:
         with col1:
-            st.markdown(html, unsafe_allow_html=True)
+            st.markdown(html_card, unsafe_allow_html=True)
+
     else:
         with col2:
-            st.markdown(html, unsafe_allow_html=True)
+            st.markdown(html_card, unsafe_allow_html=True)
 
 # =========================
 # CONTACT
