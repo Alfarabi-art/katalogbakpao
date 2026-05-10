@@ -317,7 +317,7 @@ Melayani reseller, acara keluarga, snack box, dan pesanan harian.
 # WHATSAPP BUTTON
 # =========================================
 
-wa_link = "https://wa.me/628xxxxxxxxxx"
+wa_link = "https://wa.me/62895701152656"
 
 st.link_button(
     "📲 Pesan Sekarang via WhatsApp",
