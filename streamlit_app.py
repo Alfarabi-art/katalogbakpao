@@ -338,6 +338,8 @@ dan pesanan harian.
 
 wa_link = "https://wa.me/62895701152656"
 
+st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
+
 st.link_button(
     "📲 Pesan Sekarang via WhatsApp",
     wa_link,
