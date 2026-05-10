@@ -298,7 +298,7 @@ st.markdown("""
 </div>
 
 <div class="contact-text">
-📍 Bandung, Jawa Barat
+📍 Babakan Pasar, Bogor Tengah
 </div>
 
 <div class="contact-desc">
