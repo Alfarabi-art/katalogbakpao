@@ -119,55 +119,6 @@ html, body, [class*="css"] {
     margin-bottom: 50px;
 }
 
-.card {
-    background: rgba(255,255,255,0.10);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 25px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.30);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card-body {
-    padding: 24px;
-}
-
-.nama-produk {
-    font-size: 34px;
-    font-weight: bold;
-    color: white;
-}
-
-.harga {
-    font-size: 28px;
-    color: #FFD54F;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.deskripsi {
-    color: #eeeeee;
-    margin-top: 15px;
-    font-size: 17px;
-    line-height: 1.8;
-}
-
-.badge {
-    display: inline-block;
-    margin-top: 20px;
-    background: rgba(255,255,255,0.15);
-    color: white;
-    padding: 10px 18px;
-    border-radius: 14px;
-    font-weight: bold;
-}
-
 .contact-title {
     color: white;
     font-size: 48px;
@@ -262,44 +213,65 @@ for i, item in enumerate(produk):
 
     with target:
 
-        st.markdown(
-            '<div class="card">',
-            unsafe_allow_html=True
-        )
-
-        # GAMBAR LOCAL
+        # GAMBAR
         st.image(
             item["gambar"],
             use_container_width=True
         )
 
-        # ISI CARD
+        # CARD INFO
         st.markdown(f"""
-        <div class="card-body">
+        <div style="
+            background: rgba(255,255,255,0.10);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 0px 0px 25px 25px;
+            padding: 24px;
+            margin-top: -10px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.30);
+        ">
 
-            <div class="nama-produk">
+            <div style="
+                font-size:34px;
+                font-weight:bold;
+                color:white;
+            ">
                 {item['nama']}
             </div>
 
-            <div class="harga">
+            <div style="
+                font-size:28px;
+                color:#FFD54F;
+                font-weight:bold;
+                margin-top:10px;
+            ">
                 {item['harga']}
             </div>
 
-            <div class="deskripsi">
+            <div style="
+                color:#eeeeee;
+                margin-top:15px;
+                font-size:17px;
+                line-height:1.8;
+            ">
                 {item['deskripsi']}
             </div>
 
-            <div class="badge">
+            <div style="
+                display:inline-block;
+                margin-top:20px;
+                background:rgba(255,255,255,0.15);
+                color:white;
+                padding:10px 18px;
+                border-radius:14px;
+                font-weight:bold;
+            ">
                 ⭐ Best Seller
             </div>
 
         </div>
         """, unsafe_allow_html=True)
-
-        st.markdown(
-            '</div>',
-            unsafe_allow_html=True
-        )
 
 # =========================
 # CONTACT PERSON
