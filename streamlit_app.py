@@ -99,7 +99,7 @@ html, body, [class*="css"] {
 }
 
 .main {
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.35);
     padding: 30px;
     border-radius: 25px;
 }
@@ -128,7 +128,6 @@ html, body, [class*="css"] {
     margin-bottom: 30px;
     box-shadow: 0 8px 28px rgba(0,0,0,0.30);
     transition: 0.3s;
-    min-height: 540px;
 }
 
 .card:hover {
@@ -157,7 +156,6 @@ html, body, [class*="css"] {
     margin-top: 15px;
     font-size: 17px;
     line-height: 1.8;
-    min-height: 90px;
 }
 
 .badge {
@@ -227,13 +225,10 @@ div.stLinkButton > a:hover {
     color: white !important;
 }
 
-.gambar-produk {
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    border-top-left-radius:25px;
-    border-top-right-radius:25px;
-    display:block;
+[data-testid="stImage"] img {
+    border-radius: 25px 25px 0px 0px;
+    object-fit: cover;
+    height: 280px;
 }
 
 </style>
@@ -263,35 +258,48 @@ col1, col2 = st.columns(2, gap="large")
 
 for i, item in enumerate(produk):
 
-    with (col1 if i % 2 == 0 else col2):
+    target = col1 if i % 2 == 0 else col2
 
+    with target:
+
+        st.markdown(
+            '<div class="card">',
+            unsafe_allow_html=True
+        )
+
+        # GAMBAR LOCAL
+        st.image(
+            item["gambar"],
+            use_container_width=True
+        )
+
+        # ISI CARD
         st.markdown(f"""
-        <div class="card">
+        <div class="card-body">
 
-            <img src="{item['gambar']}" class="gambar-produk">
+            <div class="nama-produk">
+                {item['nama']}
+            </div>
 
-            <div class="card-body">
+            <div class="harga">
+                {item['harga']}
+            </div>
 
-                <div class="nama-produk">
-                    {item['nama']}
-                </div>
+            <div class="deskripsi">
+                {item['deskripsi']}
+            </div>
 
-                <div class="harga">
-                    {item['harga']}
-                </div>
-
-                <div class="deskripsi">
-                    {item['deskripsi']}
-                </div>
-
-                <div class="badge">
-                    ⭐ Best Seller
-                </div>
-
+            <div class="badge">
+                ⭐ Best Seller
             </div>
 
         </div>
         """, unsafe_allow_html=True)
+
+        st.markdown(
+            '</div>',
+            unsafe_allow_html=True
+        )
 
 # =========================
 # CONTACT PERSON
@@ -324,13 +332,13 @@ Melayani reseller, acara keluarga, snack box, dan pesanan harian.
 </div>
 """, unsafe_allow_html=True)
 
-# JARAK TOMBOL
+# SPACING
 st.markdown(
-    "<div style='margin-top:45px;'></div>",
+    "<div style='margin-top:40px;'></div>",
     unsafe_allow_html=True
 )
 
-# LINK WA
+# BUTTON WA
 wa_link = "https://wa.me/62895701152656"
 
 st.link_button(
