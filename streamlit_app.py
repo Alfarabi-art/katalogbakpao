@@ -227,6 +227,15 @@ div.stLinkButton > a:hover {
     color: white !important;
 }
 
+.gambar-produk {
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+    display:block;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
