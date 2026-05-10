@@ -60,7 +60,7 @@ produk = [
         "nama": "Bakpao Coklat",
         "harga": "Rp 5.000",
         "deskripsi": "Bakpao lembut dengan isian coklat premium yang lumer di mulut.",
-        "gambar": "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop"
+        "gambar": "images/cokelat.jpg"
     },
     {
         "nama": "Bakpao Ayam",
