@@ -59,32 +59,36 @@ produk = [
     {
         "nama": "Bakpao Coklat",
         "harga": "Rp 5.000",
-        "deskripsi": "Bakpao lembut dengan isian coklat premium yang lumer di mulut.",
-        "gambar": "images/cokelat.jpg"
+        "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/cokelat.jpg",
+        "deskripsi": "Bakpao lembut dengan isian coklat premium yang lumer di mulut."
     },
+
     {
         "nama": "Bakpao Ayam",
         "harga": "Rp 7.000",
-        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
-        "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
+        "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/ayam.jpg",
+        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan."
     },
+
     {
         "nama": "Bakpao Kacang",
         "harga": "Rp 5.000",
-        "deskripsi": "Perpaduan roti lembut dengan selai strawberry manis segar.",
-        "gambar": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop"
+        "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/kacang.jpg",
+        "deskripsi": "Bakpao lembut dengan isian kacang manis yang halus dan legit."
     },
-    {
-        "nama": "Bakpao Kentang",
-        "harga": "Rp 5.000",
-        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
-        "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
-    },
+
     {
         "nama": "Bakpao Unti Kelapa",
         "harga": "Rp 5.000",
-        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
-        "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
+        "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/kelapa.jpg",
+        "deskripsi": "Perpaduan kelapa manis tradisional dengan aroma pandan yang khas."
+    },
+
+    {
+        "nama": "Bakpao Kentang",
+        "harga": "Rp 5.000",
+        "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/kentang.jpg",
+        "deskripsi": "Bakpao empuk dengan isian kentang creamy yang gurih dan lembut."
     }
 ]
 
