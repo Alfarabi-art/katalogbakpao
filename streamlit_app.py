@@ -26,10 +26,22 @@ produk = [
         "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
     },
     {
-        "nama": "Bakpao Strawberry",
-        "harga": "Rp 6.000",
+        "nama": "Bakpao Kacang",
+        "harga": "Rp 5.000",
         "deskripsi": "Perpaduan roti lembut dengan selai strawberry manis segar.",
         "gambar": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+        "nama": "Bakpao Kentang",
+        "harga": "Rp 5.000",
+        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
+        "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+        "nama": "Bakpao Unti Kelapa",
+        "harga": "Rp 5.000",
+        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
+        "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
     }
 ]
 
