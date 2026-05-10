@@ -71,19 +71,19 @@ produk = [
     {
         "nama": "Bakpao Kacang",
         "harga": "Rp 5.000",
-        "deskripsi": "Perpaduan roti lembut dengan selai strawberry manis segar.",
+        "deskripsi": "Bakpao lembut dengan isian kacang manis yang halus, legit, dan nikmat di setiap gigitan.",
         "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/kacang.jpg"
     },
     {
         "nama": "Bakpao Kentang",
         "harga": "Rp 5.000",
-        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
+        "deskripsi": "Bakpao empuk dengan isian kentang gurih yang lembut dan bikin ketagihan.",
         "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/kentang.jpg"
     },
     {
         "nama": "Bakpao Unti Kelapa",
         "harga": "Rp 5.000",
-        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
+        "deskripsi": "Perpaduan kelapa manis tradisional dengan aroma yang harum dan cita rasa khas rumahan.",
         "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/kelapa.jpg"
     }
 ]
