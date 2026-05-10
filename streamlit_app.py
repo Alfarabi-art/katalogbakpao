@@ -77,7 +77,7 @@ produk = [
     {
         "nama": "Bakpao Kentang",
         "harga": "Rp 5.000",
-        "deskripsi": "Bakpao empuk dengan isian kentang gurih yang lembut dan bikin ketagihan.",
+        "deskripsi": "Bakpao empuk dengan isian kentang manis yang lembut dan bikin ketagihan.",
         "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/kentang.jpg"
     },
     {
