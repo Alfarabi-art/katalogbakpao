@@ -1,21 +1,23 @@
 import streamlit as st
 
+# ============================================
+# CONFIG
+# ============================================
 st.set_page_config(
-    page_title="Katalog Bakpao Ceu Mumun",
+    page_title="Katalog Bakpao",
     page_icon="🥟",
     layout="wide"
 )
 
-# =========================
+# ============================================
 # CSS
-# =========================
+# ============================================
 st.markdown("""
 <style>
 
-html, body, [class*="css"]{
-    font-family: 'Poppins', sans-serif;
-}
-
+/* ============================= */
+/* BACKGROUND */
+/* ============================= */
 .stApp{
     background-image: url("https://images.unsplash.com/photo-1495195134817-aeb325a55b65");
     background-size: cover;
@@ -23,43 +25,62 @@ html, body, [class*="css"]{
     background-attachment: fixed;
 }
 
-/* overlay gelap */
-.main::before{
+/* overlay */
+.stApp::before{
     content:"";
     position:fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background: rgba(0,0,0,0.45);
+    background:rgba(0,0,0,0.45);
     z-index:-1;
 }
 
-/* judul */
-.judul{
-    text-align:center;
-    color:white;
-    font-size:60px;
-    font-weight:800;
-    margin-top:20px;
-    margin-bottom:10px;
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+/* ============================= */
+/* HIDE STREAMLIT */
+/* ============================= */
+#MainMenu{
+    visibility:hidden;
 }
 
-.subjudul{
+footer{
+    visibility:hidden;
+}
+
+header{
+    visibility:hidden;
+}
+
+/* ============================= */
+/* TITLE */
+/* ============================= */
+.title{
+    text-align:center;
+    color:white;
+    font-size:64px;
+    font-weight:800;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+.subtitle{
     text-align:center;
     color:white;
     font-size:22px;
     margin-bottom:50px;
 }
 
-/* card produk */
+/* ============================= */
+/* CARD */
+/* ============================= */
 .card{
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.10);
 
-    border:1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border:1px solid rgba(255,255,255,0.20);
 
     border-radius:28px;
 
@@ -67,22 +88,23 @@ html, body, [class*="css"]{
 
     margin-bottom:35px;
 
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    box-shadow:0 8px 32px rgba(0,0,0,0.35);
 
     transition:0.3s;
 }
 
 .card:hover{
     transform: translateY(-8px);
-    box-shadow: 0 10px 35px rgba(0,0,0,0.45);
 }
 
+/* gambar */
 .card img{
     width:100%;
     height:270px;
     object-fit:cover;
 }
 
+/* body */
 .card-body{
     padding:28px;
 }
@@ -90,15 +112,15 @@ html, body, [class*="css"]{
 /* nama produk */
 .nama-produk{
     color:white;
-    font-size:36px;
+    font-size:34px;
     font-weight:700;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 /* harga */
 .harga{
     color:#FFD54F;
-    font-size:30px;
+    font-size:28px;
     font-weight:800;
     margin-bottom:18px;
 }
@@ -106,7 +128,7 @@ html, body, [class*="css"]{
 /* deskripsi */
 .deskripsi{
     color:#F5F5F5;
-    font-size:19px;
+    font-size:18px;
     line-height:1.8;
     margin-bottom:20px;
 }
@@ -114,16 +136,23 @@ html, body, [class*="css"]{
 /* badge */
 .badge{
     display:inline-block;
-    background: rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.2);
+
     padding:10px 18px;
+
     border-radius:16px;
+
+    background: rgba(255,255,255,0.15);
+
+    border:1px solid rgba(255,255,255,0.20);
+
     color:white;
+
     font-weight:600;
-    font-size:16px;
 }
 
-/* section contact */
+/* ============================= */
+/* CONTACT */
+/* ============================= */
 .contact-title{
     color:white;
     font-size:48px;
@@ -132,13 +161,13 @@ html, body, [class*="css"]{
     margin-bottom:25px;
 }
 
-/* contact box */
 .contact-box{
-    background: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.10);
+
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
-    border:1px solid rgba(255,255,255,0.2);
+    border:1px solid rgba(255,255,255,0.20);
 
     border-radius:30px;
 
@@ -148,57 +177,53 @@ html, body, [class*="css"]{
 
     box-shadow:0 8px 32px rgba(0,0,0,0.35);
 
-    margin-bottom:30px;
+    margin-bottom:50px;
 }
 
-/* nama toko */
 .contact-nama{
     color:white;
-    font-size:54px;
+    font-size:52px;
     font-weight:800;
     margin-bottom:20px;
 }
 
-/* info */
 .contact-info{
     color:white;
-    font-size:28px;
+    font-size:26px;
     margin-bottom:15px;
 }
 
 .contact-desc{
     color:#EEEEEE;
-    font-size:22px;
-    margin-top:25px;
+    font-size:20px;
     line-height:1.8;
+    margin-top:20px;
 }
 
-/* tombol whatsapp */
-.wa-button{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+/* tombol wa */
+.wa-btn{
+    display:inline-block;
 
     margin-top:35px;
+
+    padding:18px 30px;
+
+    border-radius:18px;
 
     background:#25D366;
 
     color:white !important;
 
-    text-decoration:none;
-
-    padding:18px 28px;
-
-    border-radius:18px;
-
-    font-size:24px;
+    font-size:22px;
 
     font-weight:700;
+
+    text-decoration:none;
 
     transition:0.3s;
 }
 
-.wa-button:hover{
+.wa-btn:hover{
     background:#1ebe5d;
     transform:scale(1.03);
 }
@@ -206,11 +231,11 @@ html, body, [class*="css"]{
 /* responsive */
 @media(max-width:768px){
 
-    .judul{
+    .title{
         font-size:42px;
     }
 
-    .subjudul{
+    .subtitle{
         font-size:18px;
     }
 
@@ -227,82 +252,77 @@ html, body, [class*="css"]{
     }
 
     .contact-title{
-        font-size:36px;
+        font-size:34px;
     }
 
     .contact-nama{
-        font-size:38px;
+        font-size:36px;
     }
 
     .contact-info{
         font-size:20px;
     }
 
-    .contact-desc{
+    .wa-btn{
         font-size:18px;
-    }
-
-    .wa-button{
-        font-size:20px;
-        padding:15px 20px;
+        padding:15px 22px;
     }
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# =========================
+# ============================================
 # HEADER
-# =========================
+# ============================================
 st.markdown("""
-<div class="judul">
+<div class="title">
 🥟 Bakpao Ceu Mumun
 </div>
 
-<div class="subjudul">
-Bakpao Premium Lembut • Enak • Fresh Setiap Hari
+<div class="subtitle">
+Bakpao Premium • Lembut • Fresh Setiap Hari
 </div>
 """, unsafe_allow_html=True)
 
-# =========================
+# ============================================
 # DATA PRODUK
-# =========================
+# ============================================
 produk = [
+
     {
-        "nama": "Bakpao Coklat",
-        "harga": "Rp 5.000",
-        "deskripsi": "Bakpao lembut dengan isian coklat premium yang lumer di mulut.",
-        "gambar": "images/cokelat.jpg"
+        "nama":"Bakpao Coklat",
+        "harga":"Rp 5.000",
+        "deskripsi":"Bakpao lembut dengan isian coklat premium yang lumer di mulut.",
+        "gambar":"https://images.unsplash.com/photo-1504674900247-0877df9cc836"
     },
+
     {
-        "nama": "Bakpao Ayam",
-        "harga": "Rp 7.000",
-        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
-        "gambar": "images/ayam.jpg"
+        "nama":"Bakpao Ayam",
+        "harga":"Rp 7.000",
+        "deskripsi":"Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
+        "gambar":"https://images.unsplash.com/photo-1544025162-d76694265947"
     },
+
     {
-        "nama": "Bakpao Kacang",
-        "harga": "Rp 5.000",
-        "deskripsi": "Perpaduan roti lembut dan keju creamy premium.",
-        "gambar": "images/kacang.jpg"
+        "nama":"Bakpao Keju",
+        "harga":"Rp 6.000",
+        "deskripsi":"Perpaduan roti lembut dan keju creamy premium.",
+        "gambar":"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f"
     },
+
     {
-        "nama": "Bakpao Kentang",
-        "harga": "Rp 5.000",
-        "deskripsi": "Isian kacang hijau manis tradisional dengan rasa autentik.",
-        "gambar": "images/kentang.jpg"
-    },
-    {
-        "nama": "Bakpao Unti Kelapa",
-        "harga": "Rp 5.000",
-        "deskripsi": "Isian kacang hijau manis tradisional dengan rasa autentik.",
-        "gambar": "images/kelapa.jpg"
+        "nama":"Bakpao Kacang Hijau",
+        "harga":"Rp 5.000",
+        "deskripsi":"Isian kacang hijau manis tradisional dengan rasa autentik.",
+        "gambar":"https://images.unsplash.com/photo-1482049016688-2d3e1b311543"
     }
+
 ]
 
-# =========================
+# ============================================
 # PRODUK
-# =========================
+# ============================================
 col1, col2 = st.columns(2)
 
 for i, item in enumerate(produk):
@@ -336,13 +356,16 @@ for i, item in enumerate(produk):
     """
 
     if i % 2 == 0:
-        col1.markdown(card, unsafe_allow_html=True)
-    else:
-        col2.markdown(card, unsafe_allow_html=True)
+        with col1:
+            st.markdown(card, unsafe_allow_html=True)
 
-# =========================
-# CONTACT PERSON
-# =========================
+    else:
+        with col2:
+            st.markdown(card, unsafe_allow_html=True)
+
+# ============================================
+# CONTACT
+# ============================================
 st.markdown("""
 <div class="contact-title">
 📞 Contact Person
@@ -365,11 +388,11 @@ st.markdown("""
     </div>
 
     <div class="contact-desc">
-        Melayani reseller, acara keluarga, snack box,
+        Melayani reseller, snack box, acara keluarga,
         arisan, dan pesanan harian.
     </div>
 
-    <a class="wa-button"
+    <a class="wa-btn"
        href="https://wa.me/62895701152656"
        target="_blank">
 
