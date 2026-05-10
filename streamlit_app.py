@@ -240,6 +240,63 @@ div.stLinkButton > a:hover {
     color: white !important;
 }
 
+@media (max-width: 768px) {
+
+    .title {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+
+    .nama-produk {
+        font-size: 28px;
+    }
+
+    .harga {
+        font-size: 24px;
+    }
+
+    .deskripsi {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+    .contact-title {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    .contact-name {
+        font-size: 38px;
+    }
+
+    .contact-text {
+        font-size: 22px;
+    }
+
+    .contact-desc {
+        font-size: 18px;
+    }
+
+    div.stLinkButton > a {
+        font-size: 18px !important;
+        padding: 14px 18px !important;
+    }
+
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
 </style>
 """, unsafe_allow_html=True)
 
