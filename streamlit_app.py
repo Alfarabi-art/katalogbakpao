@@ -9,6 +9,49 @@ st.set_page_config(
     layout="wide"
 )
 
+# =====================================================
+# VIDEO BACKGROUND
+# =====================================================
+
+VIDEO_URL = "https://raw.githubusercontent.com/Alfarabi-art/bakpao/main/bg.mp4"
+
+st.markdown(f"""
+<style>
+
+video {{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}}
+
+.video-overlay {{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: -1;
+}}
+
+.stApp {{
+    background: transparent;
+}}
+
+</style>
+
+<video autoplay muted loop playsinline>
+    <source src="{VIDEO_URL}" type="video/mp4">
+</video>
+
+<div class="video-overlay"></div>
+
+""", unsafe_allow_html=True)
+
 # =========================
 # DATA PRODUK
 # =========================
@@ -53,13 +96,6 @@ st.markdown("""
 
 html, body, [class*="css"] {
     font-family: 'Poppins', sans-serif;
-}
-
-.stApp {
-    background-image: url("https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1600&auto=format&fit=crop");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 
 .main {
