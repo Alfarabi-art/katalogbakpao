@@ -45,6 +45,7 @@ video {{
 
 .block-container {{
     padding-top: 2rem;
+    padding-bottom: 4rem;
 }}
 
 h1,h2,h3,h4,h5,h6,p,label,span {{
@@ -53,28 +54,35 @@ h1,h2,h3,h4,h5,h6,p,label,span {{
 
 .catalog-card {{
     background: rgba(255,255,255,0.10);
-    border-radius: 30px;
-    padding: 22px;
+    border-radius: 28px;
+    padding: 18px;
     backdrop-filter: blur(14px);
-    border: 1px solid rgba(255,255,255,0.25);
-    margin-bottom: 30px;
-    transition: 0.35s;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.18);
+    margin-bottom: 25px;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    height: 100%;
 }}
 
 .catalog-card:hover {{
-    transform: translateY(-8px) scale(1.02);
-    background: rgba(255,255,255,0.16);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.14);
+}}
+
+.catalog-img img {{
+    border-radius: 22px;
+    height: 260px;
+    object-fit: cover;
 }}
 
 .contact-box {{
-    background: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.10);
     border-radius: 30px;
     padding: 35px;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.18);
     text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }}
 
 .stButton button {{
@@ -132,8 +140,7 @@ margin:auto;
 line-height:1.8;
 '>
 Nikmati bakpao premium dengan berbagai pilihan rasa favorit.
-Dibuat fresh setiap hari menggunakan bahan berkualitas dan cocok untuk camilan,
-acara keluarga, reseller, maupun usaha kuliner.
+Dibuat fresh setiap hari menggunakan bahan berkualitas.
 </p>
 
 </div>
@@ -144,6 +151,7 @@ acara keluarga, reseller, maupun usaha kuliner.
 # =========================================
 
 produk = [
+
     {
         "nama": "Bakpao Coklat",
         "harga": "Rp 5.000",
@@ -171,13 +179,13 @@ produk = [
         "deskripsi": "Bakpao isi kentang creamy dengan rasa gurih yang khas.",
         "gambar": "images/kentang.jpg"
     }
+
 ]
 
 # =========================================
 # KATALOG PRODUK
 # =========================================
 
-st.write("")
 st.markdown("## ✨ Menu Favorit Hari Ini")
 
 cols = st.columns(2)
@@ -191,40 +199,44 @@ for index, item in enumerate(produk):
             unsafe_allow_html=True
         )
 
+        st.markdown('<div class="catalog-img">', unsafe_allow_html=True)
+
         st.image(
             item["gambar"],
             use_container_width=True
         )
 
-        st.markdown(f"""
-        <div style='padding-top:10px;'>
+        st.markdown('</div>', unsafe_allow_html=True)
 
-        <h2 style='
-        font-size:32px;
-        margin-bottom:5px;
-        color:white;
-        '>
+        st.markdown(f"""
+        <h2 style='margin-top:15px;'>
         {item['nama']}
         </h2>
 
-        <h3 style='
-        color:#ffd54f;
-        font-size:28px;
+        <div style='
+        background:#ffd54f;
+        color:black;
+        padding:8px 18px;
+        border-radius:12px;
+        display:inline-block;
+        font-weight:bold;
+        font-size:18px;
         margin-bottom:15px;
         '>
         {item['harga']}
-        </h3>
+        </div>
 
         <p style='
-        font-size:18px;
-        line-height:1.8;
+        font-size:16px;
+        line-height:1.7;
         color:#f1f1f1;
+        min-height:80px;
         '>
         {item['deskripsi']}
         </p>
 
         <div style='
-        margin-top:20px;
+        margin-top:10px;
         padding:10px 18px;
         border-radius:14px;
         background:rgba(255,255,255,0.12);
@@ -235,9 +247,15 @@ for index, item in enumerate(produk):
         '>
         ⭐ Best Seller
         </div>
-
-        </div>
         """, unsafe_allow_html=True)
+
+        wa_produk = "https://wa.me/62895701152656"
+
+        st.link_button(
+            f"📲 Pesan {item['nama']}",
+            wa_produk,
+            use_container_width=True
+        )
 
         st.markdown(
             '</div>',
@@ -258,7 +276,7 @@ with col1:
     <div class="catalog-card">
     <h3>⭐️⭐️⭐️⭐️⭐️</h3>
     <p>
-    "Bakpaonya lembut banget dan isiannya banyak. Anak-anak suka semua!"
+    "Bakpaonya lembut banget dan isiannya banyak!"
     </p>
     <h4>- Rina</h4>
     </div>
@@ -269,7 +287,7 @@ with col2:
     <div class="catalog-card">
     <h3>⭐️⭐️⭐️⭐️⭐️</h3>
     <p>
-    "Cocok buat jualan lagi. Reseller saya banyak yang repeat order."
+    "Cocok buat jualan lagi. Reseller saya repeat order."
     </p>
     <h4>- Dedi</h4>
     </div>
@@ -296,18 +314,19 @@ st.markdown("## 📞 Contact Person")
 st.markdown("""
 <div class="contact-box">
 
-<h2>🥟 Bakpao Ceu Mumun</h2>
+<h1>🥟 Bakpao Ceu Mumun</h1>
 
-<h3>
-📱 WhatsApp: 08xxxxxxxxxx
-</h3>
+<p style='font-size:22px;'>
+📱 WhatsApp: 0895701152656
+</p>
 
-<h3>
-📍 Alamat: Isi alamat usaha kamu
-</h3>
+<p style='font-size:20px;'>
+📍 Bandung, Jawa Barat
+</p>
 
-<p>
-Melayani reseller, acara keluarga, snack box, dan pesanan harian.
+<p style='font-size:17px; line-height:1.8; color:#eeeeee;'>
+Melayani reseller, acara keluarga, snack box,
+dan pesanan harian.
 </p>
 
 </div>
