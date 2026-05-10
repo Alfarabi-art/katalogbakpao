@@ -19,18 +19,20 @@ produk = [
         "deskripsi": "Bakpao lembut dengan isian coklat premium yang lumer di mulut.",
         "gambar": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop"
     },
+
     {
         "nama": "Bakpao Ayam",
         "harga": "Rp 7.000",
         "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
         "gambar": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop"
     },
+
     {
         "nama": "Bakpao Strawberry",
         "harga": "Rp 6.000",
         "deskripsi": "Perpaduan roti lembut dengan selai strawberry manis segar.",
         "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
-    },
+    }
 ]
 
 # =========================
@@ -39,7 +41,7 @@ produk = [
 st.markdown("""
 <style>
 
-html, body, [class*="css"]  {
+html, body, [class*="css"] {
     font-family: 'Poppins', sans-serif;
 }
 
