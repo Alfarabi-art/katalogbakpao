@@ -1,127 +1,122 @@
 import streamlit as st
 
-# =========================================
+# =========================
 # CONFIG
-# =========================================
+# =========================
 st.set_page_config(
     page_title="Katalog Bakpao Ceu Mumun",
+    page_icon="🥟",
     layout="wide"
 )
 
-# =========================================
-# VIDEO BACKGROUND
-# =========================================
-VIDEO_URL = "https://raw.githubusercontent.com/Alfarabi-art/bakpao/main/bg.mp4"
+# =========================
+# DATA PRODUK
+# =========================
+produk = [
+    {
+        "nama": "Bakpao Coklat",
+        "harga": "Rp 5.000",
+        "deskripsi": "Bakpao lembut dengan isian coklat premium yang lumer di mulut.",
+        "gambar": "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+        "nama": "Bakpao Ayam",
+        "harga": "Rp 7.000",
+        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
+        "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+        "nama": "Bakpao Strawberry",
+        "harga": "Rp 6.000",
+        "deskripsi": "Perpaduan roti lembut dengan selai strawberry manis segar.",
+        "gambar": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop"
+    }
+]
 
-# =========================================
+# =========================
 # CSS
-# =========================================
-st.markdown(f"""
+# =========================
+st.markdown("""
 <style>
 
-/* HILANGKAN HEADER STREAMLIT */
-header {{
-    visibility: hidden;
-}}
+html, body, [class*="css"] {
+    font-family: 'Poppins', sans-serif;
+}
 
-[data-testid="stToolbar"] {{
-    display: none;
-}}
+.stApp {
+    background-image: url("https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1600&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
-[data-testid="stSidebar"] {{
-    display: none;
-}}
-
-.block-container {{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    max-width: 1400px;
-}}
-
-/* VIDEO BACKGROUND */
-.video-bg {{
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1000;
-    object-fit: cover;
-}}
-
-.overlay {{
-    position: fixed;
-    width: 100%;
-    height: 100%;
+.main {
     background: rgba(0,0,0,0.45);
-    top: 0;
-    left: 0;
-    z-index: -999;
-}}
+    padding: 30px;
+    border-radius: 25px;
+}
 
-/* TITLE */
-.title {{
+.title {
     text-align: center;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: bold;
     color: white;
-    margin-top: 20px;
-}}
+    margin-bottom: 10px;
+}
 
-.subtitle {{
+.subtitle {
     text-align: center;
+    font-size: 22px;
     color: #eeeeee;
-    font-size: 24px;
-    margin-bottom: 60px;
-}}
+    margin-bottom: 50px;
+}
 
-/* CARD */
-.card {{
-    background: rgba(255,255,255,0.10);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.18);
+.card {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 25px;
     overflow: hidden;
-    margin-bottom: 35px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    margin-bottom: 30px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
     transition: 0.3s;
-}}
+}
 
-.card:hover {{
-    transform: translateY(-6px);
-}}
+.card:hover {
+    transform: translateY(-8px);
+}
 
-.card-img {{
+.card img {
     width: 100%;
-    height: 320px;
+    height: 270px;
     object-fit: cover;
-}}
+}
 
-.card-body {{
-    padding: 24px;
-}}
+.card-body {
+    padding: 25px;
+}
 
-.nama {{
-    color: white;
+.nama-produk {
     font-size: 34px;
     font-weight: bold;
-}}
+    color: white;
+}
 
-.harga {{
-    color: #FFD54F;
+.harga {
     font-size: 28px;
+    color: #FFD54F;
     font-weight: bold;
     margin-top: 10px;
-}}
+}
 
-.deskripsi {{
+.deskripsi {
     color: #eeeeee;
     margin-top: 15px;
-    font-size: 17px;
-    line-height: 1.8;
-}}
+    font-size: 18px;
+    line-height: 1.7;
+}
 
-.badge {{
+.badge {
     display: inline-block;
     margin-top: 20px;
     background: rgba(255,255,255,0.15);
@@ -129,197 +124,153 @@ header {{
     padding: 10px 18px;
     border-radius: 14px;
     font-weight: bold;
-}}
+}
 
-/* CONTACT */
-.contact-box {{
-    background: rgba(255,255,255,0.10);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 30px;
-    padding: 50px;
-    text-align: center;
-    margin-top: 60px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-}}
-
-.contact-title {{
+.contact-title {
     color: white;
-    font-size: 52px;
+    font-size: 48px;
     font-weight: bold;
-}}
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
 
-.contact-info {{
+.contact-box {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(18px);
+    border-radius: 30px;
+    padding: 60px 40px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+.contact-name {
+    color: white;
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.contact-text {
+    color: #f1f1f1;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.contact-desc {
     color: #eeeeee;
-    font-size: 24px;
-    margin-top: 18px;
-}}
-
-.contact-desc {{
-    color: #dddddd;
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 22px;
+    margin-top: 25px;
     line-height: 1.8;
-}}
+}
 
-.wa-btn {{
-    display: inline-block;
-    margin-top: 35px;
-    background: #25D366;
+div.stLinkButton > a {
+    background: linear-gradient(135deg, #25D366, #128C7E);
     color: white !important;
-    padding: 16px 34px;
-    border-radius: 18px;
-    text-decoration: none;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
+    border-radius: 18px;
+    padding: 18px 24px;
+    text-align: center;
+    border: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     transition: 0.3s;
-}}
+}
 
-.wa-btn:hover {{
-    background: #1ebe5d;
-    transform: scale(1.05);
-}}
+div.stLinkButton > a:hover {
+    transform: scale(1.03);
+    background: linear-gradient(135deg, #2EEB75, #17A589);
+    color: white !important;
+}
 
 </style>
-
-<video autoplay muted loop class="video-bg">
-    <source src="{VIDEO_URL}" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
 """, unsafe_allow_html=True)
 
-# =========================================
-# DATA PRODUK
-# =========================================
-produk = [
-
-    {
-        "nama": "Bakpao Coklat",
-        "harga": "Rp 5.000",
-        "gambar": "images/cokelat.jpg",
-        "deskripsi": "Bakpao lembut dengan isian coklat premium yang lumer di mulut."
-    },
-
-    {
-        "nama": "Bakpao Ayam",
-        "harga": "Rp 7.000",
-        "gambar": "images/ayam.jpg",
-        "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan."
-    },
-
-    {
-        "nama": "Bakpao Kacang Hijau",
-        "harga": "Rp 5.000",
-        "gambar": "images/kacang.jpg",
-        "deskripsi": "Bakpao lembut dengan isian kacang hijau manis yang halus dan legit."
-    },
-
-    {
-        "nama": "Bakpao Unti Kelapa",
-        "harga": "Rp 5.000",
-        "gambar": "images/kelapa.jpg",
-        "deskripsi": "Perpaduan kelapa manis tradisional dengan aroma pandan yang khas."
-    },
-
-    {
-        "nama": "Bakpao Kentang",
-        "harga": "Rp 5.000",
-        "gambar": "images/kentang.jpg",
-        "deskripsi": "Bakpao empuk dengan isian kentang gurih creamy yang lezat."
-    },
-
-]
-
-# =========================================
+# =========================
 # HEADER
-# =========================================
+# =========================
+st.markdown('<div class="main">', unsafe_allow_html=True)
+
 st.markdown("""
 <div class="title">
-🥟 Bakpao Ceu Mumun
+🥟 Katalog Bakpao Ceu Mumun
 </div>
+""", unsafe_allow_html=True)
 
+st.markdown("""
 <div class="subtitle">
 Bakpao homemade lembut, halal, dan cocok untuk reseller maupun acara keluarga
 </div>
 """, unsafe_allow_html=True)
 
-# =========================================
+# =========================
 # PRODUK
-# =========================================
-col1, col2 = st.columns(2, gap="large")
+# =========================
+col1, col2 = st.columns(2)
 
 for i, item in enumerate(produk):
 
-    col = col1 if i % 2 == 0 else col2
-
-    with col:
-
-        st.markdown(f"""
-        <div class="card">
-
-            <img src="data:image/jpg;base64,{st.image(item['gambar'])}" class="card-img">
-
-        </div>
-        """, unsafe_allow_html=True)
-
-        st.image(
-            item["gambar"],
-            use_container_width=True
-        )
-
-        st.markdown(f"""
+    html = f"""
+    <div class="card">
+        <img src="{item['gambar']}">
         <div class="card-body">
-
-            <div class="nama">
-                {item['nama']}
-            </div>
-
-            <div class="harga">
-                {item['harga']}
-            </div>
-
-            <div class="deskripsi">
-                {item['deskripsi']}
-            </div>
-
-            <div class="badge">
-                ⭐ Best Seller
-            </div>
-
+            <div class="nama-produk">{item['nama']}</div>
+            <div class="harga">{item['harga']}</div>
+            <div class="deskripsi">{item['deskripsi']}</div>
+            <div class="badge">⭐ Best Seller</div>
         </div>
-        """, unsafe_allow_html=True)
+    </div>
+    """
 
-# =========================================
-# CONTACT
-# =========================================
+    if i % 2 == 0:
+        col1.markdown(html, unsafe_allow_html=True)
+    else:
+        col2.markdown(html, unsafe_allow_html=True)
+
+# =========================
+# CONTACT PERSON
+# =========================
+st.markdown("""
+<div class="contact-title">
+📞 Contact Person
+</div>
+""", unsafe_allow_html=True)
+
 st.markdown("""
 <div class="contact-box">
 
-    <div class="contact-title">
-        🥟 Bakpao Ceu Mumun
-    </div>
+<div class="contact-name">
+🥟 Bakpao Ceu Mumun
+</div>
 
-    <div class="contact-info">
-        📱 WhatsApp: 0895701152656
-    </div>
+<div class="contact-text">
+📱 WhatsApp: 0895701152656
+</div>
 
-    <div class="contact-info">
-        📍 Bandung, Jawa Barat
-    </div>
+<div class="contact-text">
+📍 Bandung, Jawa Barat
+</div>
 
-    <div class="contact-desc">
-        Melayani reseller, snack box, acara keluarga, arisan, dan pesanan harian.
-    </div>
-
-    <a class="wa-btn"
-       href="https://wa.me/62895701152656"
-       target="_blank">
-
-       📲 Pesan Sekarang via WhatsApp
-
-    </a>
+<div class="contact-desc">
+Melayani reseller, acara keluarga, snack box, dan pesanan harian.
+</div>
 
 </div>
 """, unsafe_allow_html=True)
+
+# JARAK TOMBOL
+st.markdown(
+    "<div style='margin-top:45px;'></div>",
+    unsafe_allow_html=True
+)
+
+# LINK WA
+wa_link = "https://wa.me/62895701152656"
+
+st.link_button(
+    "📲 Pesan Sekarang via WhatsApp",
+    wa_link,
+    use_container_width=True
+)
+
+st.markdown("</div>", unsafe_allow_html=True)
