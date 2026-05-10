@@ -72,28 +72,29 @@ html, body, [class*="css"] {
 }
 
 .card {
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.10);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.18);
     border-radius: 25px;
     overflow: hidden;
     margin-bottom: 30px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.30);
     transition: 0.3s;
+    min-height: 540px;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
 }
 
 .card img {
     width: 100%;
-    height: 270px;
+    height: 250px;
     object-fit: cover;
 }
 
 .card-body {
-    padding: 25px;
+    padding: 24px;
 }
 
 .nama-produk {
@@ -112,8 +113,9 @@ html, body, [class*="css"] {
 .deskripsi {
     color: #eeeeee;
     margin-top: 15px;
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 17px;
+    line-height: 1.8;
+    min-height: 90px;
 }
 
 .badge {
@@ -135,13 +137,13 @@ html, body, [class*="css"] {
 }
 
 .contact-box {
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(18px);
-    border-radius: 30px;
-    padding: 60px 40px;
+    background: rgba(255,255,255,0.10);
+    backdrop-filter: blur(16px);
+    border-radius: 28px;
+    padding: 50px 35px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.25);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.20);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.30);
 }
 
 .contact-name {
@@ -206,7 +208,7 @@ Bakpao homemade lembut, halal, dan cocok untuk reseller maupun acara keluarga
 # =========================
 # PRODUK
 # =========================
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(2, gap="large")
 
 for i, item in enumerate(produk):
 
