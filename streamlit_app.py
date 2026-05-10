@@ -99,9 +99,8 @@ html, body, [class*="css"] {
 }
 
 .main {
-    background: rgba(0,0,0,0.45);
-    padding: 30px;
-    border-radius: 25px;
+    background: transparent;
+    padding-top: 10px;
 }
 
 .title {
