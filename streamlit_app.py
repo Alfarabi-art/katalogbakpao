@@ -322,5 +322,5 @@ wa_link = "https://wa.me/628xxxxxxxxxx"
 st.link_button(
     "📲 Pesan Sekarang via WhatsApp",
     wa_link,
-    use_cont
+    use_container_width=True
 )
