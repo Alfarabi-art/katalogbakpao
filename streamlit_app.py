@@ -272,25 +272,31 @@ produk = [
         "nama": "Bakpao Coklat",
         "harga": "Rp 5.000",
         "deskripsi": "Bakpao lembut dengan isian coklat premium yang lumer di mulut.",
-        "gambar": "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+        "gambar": "images/cokelat.jpg"
     },
     {
         "nama": "Bakpao Ayam",
         "harga": "Rp 7.000",
         "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
-        "gambar": "https://images.unsplash.com/photo-1544025162-d76694265947"
+        "gambar": "images/ayam.jpg"
     },
     {
-        "nama": "Bakpao Keju",
-        "harga": "Rp 6.000",
+        "nama": "Bakpao Kacang",
+        "harga": "Rp 5.000",
         "deskripsi": "Perpaduan roti lembut dan keju creamy premium.",
-        "gambar": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f"
+        "gambar": "images/kacang.jpg"
     },
     {
-        "nama": "Bakpao Kacang Hijau",
+        "nama": "Bakpao Kentang",
         "harga": "Rp 5.000",
         "deskripsi": "Isian kacang hijau manis tradisional dengan rasa autentik.",
-        "gambar": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543"
+        "gambar": "images/kentang.jpg"
+    },
+    {
+        "nama": "Bakpao Unti Kelapa",
+        "harga": "Rp 5.000",
+        "deskripsi": "Isian kacang hijau manis tradisional dengan rasa autentik.",
+        "gambar": "images/kelapa.jpg"
     }
 ]
 
