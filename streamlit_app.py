@@ -260,8 +260,6 @@ col1, col2 = st.columns(2, gap="large")
 
 for i, item in enumerate(produk):
 
-    for i, item in enumerate(produk):
-
     col = col1 if i % 2 == 0 else col2
 
     with col:
