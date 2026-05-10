@@ -4,7 +4,7 @@ import streamlit as st
 # CONFIG
 # =========================
 st.set_page_config(
-    page_title="Katalog Bakpao Ceu Mumun",
+    page_title="Bakpao Ceu Mumun",
     page_icon="🥟",
     layout="wide"
 )
@@ -66,25 +66,25 @@ produk = [
         "nama": "Bakpao Ayam",
         "harga": "Rp 7.000",
         "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
-        "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
+        "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/ayam.jpg"
     },
     {
         "nama": "Bakpao Kacang",
         "harga": "Rp 5.000",
         "deskripsi": "Perpaduan roti lembut dengan selai strawberry manis segar.",
-        "gambar": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop"
+        "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/kacang.jpg"
     },
     {
         "nama": "Bakpao Kentang",
         "harga": "Rp 5.000",
         "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
-        "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
+        "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/kentang.jpg"
     },
     {
         "nama": "Bakpao Unti Kelapa",
         "harga": "Rp 5.000",
         "deskripsi": "Isi ayam gurih dengan bumbu spesial yang nikmat dan mengenyangkan.",
-        "gambar": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1200&auto=format&fit=crop"
+        "gambar": "https://raw.githubusercontent.com/Alfarabi-art/katalogbakpao/main/images/kelapa.jpg"
     }
 ]
 
@@ -243,7 +243,7 @@ st.markdown('<div class="main">', unsafe_allow_html=True)
 
 st.markdown("""
 <div class="title">
-🥟 Katalog Bakpao Ceu Mumun
+🥟 Bakpao Ceu Mumun
 </div>
 """, unsafe_allow_html=True)
 
@@ -294,7 +294,7 @@ st.markdown("""
 </div>
 
 <div class="contact-text">
-📱 WhatsApp: 0895701152656
+📱 WhatsApp: 0882-1309-5215
 </div>
 
 <div class="contact-text">
@@ -315,7 +315,7 @@ st.markdown(
 )
 
 # LINK WA
-wa_link = "https://wa.me/62895701152656"
+wa_link = "https://wa.me/6288213095215"
 
 st.link_button(
     "📲 Pesan Sekarang via WhatsApp",
